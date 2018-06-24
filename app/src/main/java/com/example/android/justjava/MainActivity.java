@@ -22,19 +22,22 @@ public class MainActivity extends AppCompatActivity {
     /**
      * This method is called when the order button is clicked.
      */
+
     int quantity = 2;
 
     public void submitOrder(View view) {
-
-        display(quantity);
-        displayPrice(quantity * 5);
+        int price = quantity * 5;
+        String priceMessage = "Итого:\n" + "$" + price + "\nСпасибо за покупку!";
+        displayMessage(priceMessage);
+        //displayPrice(quantity*5);
     }
 
     /**
      * This Method decrement quantity
      */
     public void decrement(View view) {
-        display(--quantity);
+        --quantity;
+        display(quantity);
     }
 
     /**
@@ -57,5 +60,11 @@ public class MainActivity extends AppCompatActivity {
     private void displayPrice(int number) {
         TextView priceTextView = (TextView) findViewById(R.id.price_text_view);
         priceTextView.setText(NumberFormat.getCurrencyInstance().format(number));
+    }
+
+
+    private void displayMessage(String message) {
+        TextView priceTextView = (TextView) findViewById(R.id.price_text_view);
+        priceTextView.setText(message);
     }
 }
