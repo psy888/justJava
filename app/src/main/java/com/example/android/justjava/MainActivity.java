@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -26,6 +27,9 @@ public class MainActivity extends AppCompatActivity {
     int quantity = 0;
 
     public void submitOrder(View view) {
+        // Имя клиента
+        EditText clientName = findViewById(R.id.clientName);
+        String name = clientName.getText().toString();
         // Взбитые сливки
         CheckBox slivkiCheckBox = findViewById(R.id.slivkiCheckBox);
         boolean hasSlivki = slivkiCheckBox.isChecked();
@@ -36,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
         int price = calculatePrice();
 
         //Final Message
-        displayMessage(createOrderSummery(price, hasSlivki, hasChokolate));
+        displayMessage(createOrderSummery(price, hasSlivki, hasChokolate, name));
 
         //Toast message
         Toast toast = Toast.makeText(this, "Заказ обработан!", Toast.LENGTH_SHORT);
@@ -48,6 +52,8 @@ public class MainActivity extends AppCompatActivity {
      */
     public void decrement(View view) {
         display(--quantity);
+        //int price = calculatePrice();
+        displayMessage(String.valueOf(calculatePrice()));
     }
 
     /**
@@ -55,7 +61,12 @@ public class MainActivity extends AppCompatActivity {
      */
     public void increment(View view) {
         display(++quantity);
+        displayMessage(String.valueOf(calculatePrice()));
     }
+    /**
+     * ----- промежуточная цена-----
+     */
+
     /**
      * This method displays the given quantity value on the screen.
      */
@@ -86,10 +97,10 @@ public class MainActivity extends AppCompatActivity {
      * @param total        - Общая сумма заказа
      * @param topSlivki    -  Добавлять сливки
      * @param topChokolate - добавлять шоколад
+     * @param name - имя клиента
      * @return - возвращает текст заказа с входящими параметрами
      */
-    private String createOrderSummery(int total, boolean topSlivki, boolean topChokolate) {
-        String name = "Капитан Очевидность";
+    private String createOrderSummery(int total, boolean topSlivki, boolean topChokolate, String name) {
         return "Имя: " + name + "\nДобавить Взбитые сливки? :" + topSlivki + "\nДобавить шоколад? :" + topChokolate + "\nКоличество: " + quantity + " \nИтого: " + total + "грн.\nСпасибо за покупку!";
     }
 
