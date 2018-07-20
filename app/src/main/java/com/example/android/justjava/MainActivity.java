@@ -46,9 +46,9 @@ public class MainActivity extends AppCompatActivity {
         //Final Message
         createOrderSummery(price, hasSlivki, hasChokolate, name);
 
-        //Toast message
-        Toast toast = Toast.makeText(this, "Заказ обработан!", Toast.LENGTH_SHORT);
-        toast.show();
+//        //Toast message
+//        Toast toast = Toast.makeText(this, "Заказ обработан!", Toast.LENGTH_SHORT);
+//        toast.show();
     }
 
     /**
@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
         Button increment = findViewById(R.id.increment);
         if (quantity == 1) {
             decrement.setEnabled(false);
-            Toast.makeText(this, "Заказ меньше одной чашки не возможен!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, getString(R.string.decrement), Toast.LENGTH_SHORT).show();
             return;
         } else {
             increment.setEnabled(true);
@@ -77,16 +77,13 @@ public class MainActivity extends AppCompatActivity {
         Button increment = findViewById(R.id.increment);
         if (quantity == 100) {
             increment.setEnabled(false);
-            Toast.makeText(this, "Превышен лимит заказа.", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, getString(R.string.increment), Toast.LENGTH_SHORT).show();
             return;
         } else {
             decrement.setEnabled(true);
         }
         display(++quantity);
     }
-    /**
-     * ----- промежуточная цена-----
-     */
 
     /**
      * This method displays the given quantity value on the screen.
@@ -122,7 +119,7 @@ public class MainActivity extends AppCompatActivity {
      */
     private void createOrderSummery(int total, boolean topSlivki, boolean topChokolate, String name) {
         String[] addresses = {"mail@mail.com"};
-        String order = "Имя: " + name + "\nДобавить Взбитые сливки? :" + topSlivki + "\nДобавить шоколад? :" + topChokolate + "\nКоличество: " + quantity + " \nИтого: " + total + "грн.\nСпасибо за покупку!";
+        String order = getString(R.string.name) + name + getString(R.string.addSlivki) + topSlivki + getString(R.string.addChokolate) + topChokolate + getString(R.string.orderAmount) + quantity + getString(R.string.total) + total + getString(R.string.currency) + getString(R.string.thanks);
 
         //Create Intent
         Intent intent = new Intent(Intent.ACTION_SENDTO);

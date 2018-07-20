@@ -1,3 +1,24 @@
 <resources>
     <string name="app_name">Just Java</string>
+
+    <string name="hint_name">Введите имя</string>
+    <string name="toppings">Выбор топпинга</string>
+    <string name="slivkiCheckBox">Взбитые сливки</string>
+    <string name="chokolateCheckBox">Шоколад</string>
+    <string name="amount">Количество</string>
+    <string name="order">Заказать</string>
+
+    <!--           Toast Strings           -->
+    <string name="decrement">Заказ меньше одной чашки не возможен!</string>
+    <string name="increment">Превышен лимит заказа.</string>
+
+    <!--           Order Summery strings    -->
+    <string name="name">Имя: </string>
+    <string name="addSlivki">\nДобавить Взбитые сливки? : </string>
+    <string name="addChokolate">\nДобавить шоколад? : </string>
+    <string name="orderAmount">\nКоличество: </string>
+    <string name="total">\nИтого: </string>
+    <string name="currency">"грн."</string>
+    <string name="thanks">"\nСпасибо за покупку!"</string>
+
 </resources>

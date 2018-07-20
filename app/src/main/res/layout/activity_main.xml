@@ -15,14 +15,14 @@
             android:id="@+id/clientName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Введите имя"
+            android:hint="@string/hint_name"
             android:inputType="textCapWords"
             android:textSize="16sp" />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="8dp"
-            android:text="Выбор топпинга"
+            android:text="@string/toppings"
             android:textAllCaps="true"
             android:textSize="16sp" />
 
@@ -36,7 +36,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="24dp"
-                android:text="Взбитые сливки"
+                android:text="@string/slivkiCheckBox"
                 android:textSize="16sp" />
 
             <CheckBox
@@ -44,7 +44,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="24dp"
-                android:text="Шоколад"
+                android:text="@string/chokolateCheckBox"
                 android:textSize="16sp" />
         </LinearLayout>
 
@@ -52,7 +52,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="8dp"
-            android:text="Количество"
+            android:text="@string/amount"
             android:textAllCaps="true"
             android:textSize="16sp" />
 
@@ -86,29 +86,11 @@
 
         </LinearLayout>
 
-        <!--<TextView-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:padding="8dp"-->
-        <!--android:text="Итог заказа"-->
-        <!--android:textAllCaps="true"-->
-        <!--android:textSize="16sp" />-->
-
-        <!--<TextView-->
-        <!--android:id="@+id/order_summary_text_view"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:padding="8dp"-->
-        <!--android:text="0"-->
-        <!--android:textColor="#000" />-->
-
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
             android:onClick="submitOrder"
-            android:text="Заказать" />
-
-
+            android:text="@string/order" />
     </LinearLayout>
 </ScrollView>
