@@ -1,15 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_name">Just Java</string>
-    <string name="toppings">Toppings</string>
+
     <string name="hint_name">Name</string>
-    <string name="chokolateCheckBox">Chokolate</string>
+    <string name="toppings">Toppings</string>
+    <string name="slivkiCheckBox">Whipped Cream</string>
+    <string name="chocolateCheckBox">Chocolate</string>
     <string name="amount">Amount</string>
     <string name="order">Order</string>
-    <string name="name">Name:</string>
-    <string name="currency">$</string>
-    <string name="thanks">Thank you!</string>
-    <string name="total">Total:</string>
+
+    <!--           Toast Strings           -->
+    <string name="decrement">Order less than one cup is not possible!</string>
+    <string name="increment">The order limit has been exceeded.</string>
+
+    <!--           Order Summery strings    -->
+    <string name="nameStr">Name: <xliff:g example="Amy" id="name">%s</xliff:g></string>
+    <string name="addSlivki">Add Whipped Cream? : </string>
+    <string name="addChocolate">Add chocolate? :</string>
     <string name="orderAmount">Amount:</string>
-    <string name="addChokolate">Add chokolate:</string>
+    <string name="total">Total:</string>
+    <string name="currency">"$"</string>
+    <string name="thanks">Thank you!</string>
+
+    <!--       Intent subject string      -->
+    <string name="subjectIntent">"Just Java order for <xliff:g example="Amy" id="name">%s</xliff:g>"</string>
+
 </resources>

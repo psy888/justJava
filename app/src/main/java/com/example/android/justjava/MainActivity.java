@@ -39,12 +39,12 @@ public class MainActivity extends AppCompatActivity {
         CheckBox slivkiCheckBox = findViewById(R.id.slivkiCheckBox);
         boolean hasSlivki = slivkiCheckBox.isChecked();
         //Шоколад
-        CheckBox chokolate = findViewById(R.id.chokolateCheckBox);
-        boolean hasChokolate = chokolate.isChecked();
+        CheckBox chocolate = findViewById(R.id.chocolateCheckBox);
+        boolean hasChocolate = chocolate.isChecked();
         //Price method
-        int price = calculatePrice(hasSlivki, hasChokolate);
+        int price = calculatePrice(hasSlivki, hasChocolate);
         //Final Message
-        createOrderSummery(price, hasSlivki, hasChokolate, name);
+        createOrderSummery(price, hasSlivki, hasChocolate, name);
 
 //        //Toast message
 //        Toast toast = Toast.makeText(this, "Заказ обработан!", Toast.LENGTH_SHORT);
@@ -97,15 +97,15 @@ public class MainActivity extends AppCompatActivity {
     /**
      * Просчет цены заказа
      * @param slivki - добавлять сливки
-     * @param chokolate - добавлять шоколад
+     * @param chocolate - добавлять шоколад
      * @return количество * цену
      */
-    private int calculatePrice(boolean slivki, boolean chokolate) {
+    private int calculatePrice(boolean slivki, boolean chocolate) {
         int price = 5;
         if (slivki) {
             price += 1;
         }
-        if (chokolate) {
+        if (chocolate) {
             price += 2;
         }
         return price * quantity;
@@ -114,18 +114,23 @@ public class MainActivity extends AppCompatActivity {
     /**
      * @param total        - Общая сумма заказа
      * @param topSlivki    -  Добавлять сливки
-     * @param topChokolate - добавлять шоколад
+     * @param topChocolate - добавлять шоколад
      * @param name - имя клиента
      */
-    private void createOrderSummery(int total, boolean topSlivki, boolean topChokolate, String name) {
+    private void createOrderSummery(int total, boolean topSlivki, boolean topChocolate, String name) {
         String[] addresses = {"mail@mail.com"};
-        String order = getString(R.string.name) + name + getString(R.string.addSlivki) + topSlivki + getString(R.string.addChokolate) + topChokolate + getString(R.string.orderAmount) + quantity + getString(R.string.total) + total + getString(R.string.currency) + getString(R.string.thanks);
+        String order = getString(R.string.nameStr, name);
+        order += "\n" + getString(R.string.addSlivki) + topSlivki;
+        order += "\n" + getString(R.string.addChocolate) + topChocolate;
+        order += "\n" + getString(R.string.orderAmount) + quantity;
+        order += "\n" + getString(R.string.total) + total + getString(R.string.currency);
+        order += "\n" + getString(R.string.thanks);
 
         //Create Intent
         Intent intent = new Intent(Intent.ACTION_SENDTO);
         intent.setData(Uri.parse("mailto:")); //только для email приложений
         intent.putExtra(Intent.EXTRA_EMAIL, addresses);
-        intent.putExtra(Intent.EXTRA_SUBJECT, "Just Java заказ для " + name);
+        intent.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.subjectIntent, name));
         intent.putExtra(Intent.EXTRA_TEXT, order);
         if (intent.resolveActivity(getPackageManager()) != null) {
             startActivity(intent);

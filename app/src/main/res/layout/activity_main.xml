@@ -40,11 +40,11 @@
                 android:textSize="16sp" />
 
             <CheckBox
-                android:id="@+id/chokolateCheckBox"
+                android:id="@+id/chocolateCheckBox"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="24dp"
-                android:text="@string/chokolateCheckBox"
+                android:text="@string/chocolateCheckBox"
                 android:textSize="16sp" />
         </LinearLayout>
 

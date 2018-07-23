@@ -1,10 +1,10 @@
-<resources>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_name">Just Java</string>
 
     <string name="hint_name">Введите имя</string>
     <string name="toppings">Выбор топпинга</string>
     <string name="slivkiCheckBox">Взбитые сливки</string>
-    <string name="chokolateCheckBox">Шоколад</string>
+    <string name="chocolateCheckBox">Шоколад</string>
     <string name="amount">Количество</string>
     <string name="order">Заказать</string>
 
@@ -13,12 +13,15 @@
     <string name="increment">Превышен лимит заказа.</string>
 
     <!--           Order Summery strings    -->
-    <string name="name">Имя: </string>
-    <string name="addSlivki">\nДобавить Взбитые сливки? : </string>
-    <string name="addChokolate">\nДобавить шоколад? : </string>
-    <string name="orderAmount">\nКоличество: </string>
-    <string name="total">\nИтого: </string>
+    <string name="nameStr">Имя: <xliff:g example="Amy" id="name">%s</xliff:g></string>
+    <string name="addSlivki">Добавить Взбитые сливки? : </string>
+    <string name="addChocolate">Добавить шоколад? : </string>
+    <string name="orderAmount">Количество: </string>
+    <string name="total">Итого: </string>
     <string name="currency">"грн."</string>
-    <string name="thanks">"\nСпасибо за покупку!"</string>
+    <string name="thanks">"Спасибо за покупку!"</string>
+
+    <!--       Intent subject string      -->
+    <string name="subjectIntent">"Just Java заказ для <xliff:g example="Amy" id="name">%s</xliff:g>"</string>
 
 </resources>
